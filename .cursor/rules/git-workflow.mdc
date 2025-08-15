@@ -1,0 +1,88 @@
+---
+description: "Git workflow and branch management rules"
+autoAttach:
+  - trigger: "beforePush"
+  - trigger: "beforeCommit"
+  - trigger: "workComplete"
+alwaysApply: true
+---
+
+# Git Workflow Rules
+
+## Branch Protection Policy
+- **NEVER push directly to main branch**
+- Always create feature/topic branches for new work
+- Use descriptive branch names that reflect the work being done
+
+## Workflow Requirements
+
+### Starting New Work
+1. **Always create a new branch** when starting work in a thread:
+   ```bash
+   git checkout -b feature/descriptive-name
+   ```
+
+2. **Branch Naming Convention**:
+   - `feature/description` - for new features or documentation
+   - `fix/description` - for bug fixes
+   - `docs/description` - for documentation updates
+   - `config/description` - for configuration changes
+
+### During Development
+- Make regular commits with descriptive messages
+- Push to the feature branch, not main:
+   ```bash
+   git push origin feature/your-branch-name
+   ```
+
+### Completing Work
+When work is completed:
+1. **Ask user for confirmation** before merging to main
+2. **Review changes** before merge
+3. **Options to present**:
+   - Merge to main and delete feature branch
+   - Keep feature branch for future reference
+   - Create a pull request (if using GitHub workflow)
+   - Cancel merge and continue working
+
+## Enforcement Rules
+
+### Before Any Push Command
+- **Check current branch**: If on main, STOP and create feature branch
+- **Warn user**: Explain branch protection policy
+- **Suggest action**: Offer to create appropriate branch
+
+### Before Merge to Main
+- **Confirm intent**: Ask "Ready to merge [branch-name] to main?"
+- **Show summary**: Display what changes will be merged
+- **Provide options**: 
+  - ✅ Merge and delete feature branch
+  - 🔄 Merge and keep feature branch  
+  - 📋 Create pull request instead
+  - ❌ Cancel and continue working
+
+### Emergency Override
+- Allow override with explicit confirmation for urgent fixes
+- Require additional confirmation: "This breaks the workflow policy. Are you sure?"
+
+## Example Workflow
+
+```bash
+# ✅ CORRECT: Starting new work
+git checkout -b docs/add-network-topology
+git add docs/network/topology.md
+git commit -m "Add network topology documentation"
+git push origin docs/add-network-topology
+
+# ❌ INCORRECT: Direct to main
+git checkout main
+git add file.md
+git commit -m "Update file"
+git push origin main  # <-- This should be prevented!
+```
+
+## Integration with Cursor
+- Automatically suggest branch names based on current work
+- Monitor git commands and enforce workflow
+- Provide helpful prompts and confirmations
+- Guide users through proper git workflow
