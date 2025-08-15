@@ -1,0 +1,21 @@
+---
+description: "Documentation generation and maintenance standards"
+autoAttach:
+  - filePattern: "**/*.md"
+  - filePattern: "README*"
+  - trigger: "newFeature"
+  - trigger: "afterImplementation"
+---
+
+**Documentation Standards:**
+- Generate documentation for new features by extending README.md
+- Add comments in code explaining reasoning for non-obvious implementations
+- Document complex logic and business rules inline
+- Update relevant documentation when modifying existing features
+- Include usage examples for new functionality
+- Document configuration options and environment variables
+- Maintain clear setup and installation instructions
+- Add troubleshooting sections for common issues
+- Keep documentation up-to-date with code changes
+- Use clear, concise language and proper formatting
+- Include diagrams or flowcharts for complex processes when helpful

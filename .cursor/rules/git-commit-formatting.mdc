@@ -1,0 +1,27 @@
+---
+description: "Git workflow and commit message formatting standards"
+autoAttach:
+  - trigger: "beforeCommit"
+  - trigger: "beforeBranch"
+alwaysApply: true
+---
+
+**Git Commit Message Formatting Rules:**
+- Run `git status` to enumerate changes immediately before commit (concatenate with &)
+- **Message Length:** Keep commit messages around 250 characters
+- **Content Requirements:**
+  - Enumerate ALL functional changes made
+  - Use bullets (separate lines) for different changes
+  - Provide meaningful descriptions beyond just class names
+  - Avoid duplicate or redundant bullet points
+  - Focus on functional impact, not implementation details
+  - Use clear, descriptive commit titles
+
+**Example Format:**
+```
+Add user authentication and role management
+• Implement JWT token validation middleware
+• Add role-based access control for admin routes
+• Create user registration with email verification
+• Update database schema for user permissions
+```
