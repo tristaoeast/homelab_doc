@@ -35,27 +35,41 @@ This repository documents my personal homelab infrastructure, providing insights
 
 ## 🖥️ Hardware Components
 
-### Primary Server
-- **Model**: [To be documented]
-- **CPU**: [To be documented]
-- **RAM**: [To be documented]
-- **Storage**: [To be documented]
-- **Network**: [To be documented]
+### Node 1: Raspberry Pi 5
+- **Model**: Raspberry Pi 5
+- **Role**: Network Services & VPN Gateway
+- **Services**:
+  - Pi-hole (DNS ad-blocking)
+  - WG Dashboard (WireGuard management)
+  - Tailscale Exit Node/Subnet Router
 
-### Network Equipment
-- **Router**: [To be documented]
-- **Switches**: [To be documented]
-- **Access Points**: [To be documented]
+### Node 2: Proxmox PVE Server
+- **Model**: Minisforum BD795M
+- **GPU**: NVIDIA GTX 1060 3GB
+- **Platform**: Proxmox Virtual Environment
+- **Virtual Machines**:
+  - **HomeTower**: Windows 11 VM
+  - **Home Assistant OS**: Smart home automation
+  - **Services**: Unifi Controller (in HA OS), Nginx Proxy Manager
+
+### Node 3: TrueNAS Scale
+- **Role**: Network Attached Storage
+- **Platform**: TrueNAS Scale
+- **Applications**: Multiple apps (detailed documentation coming)
 
 ## 💻 Software Stack
 
 ### Virtualization/Containerization
-- **Platform**: [To be documented]
-- **Orchestration**: [To be documented]
+- **Proxmox VE**: Primary virtualization platform
+- **TrueNAS Scale**: Kubernetes-based app platform
+- **Docker**: Containerization within VMs
 
 ### Operating Systems
-- **Host OS**: [To be documented]
-- **Guest OS**: [To be documented]
+- **Proxmox VE**: Debian-based hypervisor
+- **Raspberry Pi OS**: Debian-based ARM64
+- **TrueNAS Scale**: Debian-based storage OS
+- **Windows 11**: VM workstation
+- **Home Assistant OS**: Specialized IoT platform
 
 ## 🌐 Network Configuration
 
@@ -69,35 +83,33 @@ This repository documents my personal homelab infrastructure, providing insights
 - **Guest VLAN**: [To be documented]
 
 ### DNS and DHCP
-- **Internal DNS**: [To be documented]
-- **DHCP Server**: [To be documented]
+- **Internal DNS**: Pi-hole (Raspberry Pi 5)
+- **DHCP Server**: Router-based (integration with Pi-hole)
 
 ## 🔧 Services and Applications
 
 ### Core Infrastructure Services
-- [ ] **DNS Server**: [Service name and purpose]
-- [ ] **DHCP Server**: [Service name and purpose]
-- [ ] **NTP Server**: [Service name and purpose]
+- [x] **DNS Server**: Pi-hole on Raspberry Pi 5 (Ad-blocking & DNS resolution)
+- [x] **Reverse Proxy**: Nginx Proxy Manager on Proxmox (SSL termination & routing)
+- [x] **Network Controller**: Unifi Controller in Home Assistant OS
 
-### Development and CI/CD
-- [ ] **Git Repository**: [Service name and purpose]
-- [ ] **CI/CD Pipeline**: [Service name and purpose]
-- [ ] **Container Registry**: [Service name and purpose]
+### VPN and Remote Access
+- [x] **WireGuard VPN**: WG Dashboard on Raspberry Pi 5 (Remote access management)
+- [x] **Tailscale**: Exit node/subnet router on Raspberry Pi 5 (Mesh VPN)
 
-### Monitoring and Observability
-- [ ] **Metrics Collection**: [Service name and purpose]
-- [ ] **Log Aggregation**: [Service name and purpose]
-- [ ] **Alerting**: [Service name and purpose]
+### Home Automation
+- [x] **Home Assistant**: Home Assistant OS VM on Proxmox (Smart home automation)
+- [x] **Unifi Controller**: Network device management (integrated with HA OS)
 
-### Media and File Services
-- [ ] **Network Attached Storage**: [Service name and purpose]
-- [ ] **Media Server**: [Service name and purpose]
-- [ ] **File Sync**: [Service name and purpose]
+### Storage and File Services
+- [x] **Network Attached Storage**: TrueNAS Scale (File storage & backup)
+- [ ] **Media Server**: TrueNAS apps (to be documented)
+- [ ] **File Sync**: TrueNAS apps (to be documented)
 
-### Security Services
-- [ ] **VPN Server**: [Service name and purpose]
-- [ ] **Certificate Management**: [Service name and purpose]
-- [ ] **Password Manager**: [Service name and purpose]
+### Virtualization and Compute
+- [x] **Hypervisor**: Proxmox VE on Minisforum BD795M
+- [x] **Windows Workstation**: HomeTower VM (Windows 11)
+- [x] **GPU Passthrough**: GTX 1060 3GB for VM acceleration
 
 ## 🔒 Security Implementation
 
