@@ -1,0 +1,74 @@
+# Homelab Documentation Repository
+
+## Project Purpose
+This repository contains comprehensive documentation for a personal homelab setup, including architecture, hardware components, software configurations, network topology, services, security implementations, and operational procedures.
+
+## Repository Structure
+```
+/
+├── README.md                    # Main documentation overview and table of contents
+├── docs/                        # Organized documentation by category
+│   ├── architecture/           # System architecture and design documents
+│   ├── hardware/               # Hardware specifications and configurations
+│   ├── software/               # Software stack and configurations  
+│   ├── network/                # Network topology and configuration
+│   ├── services/               # Individual service documentation
+│   ├── security/               # Security policies and configurations
+│   ├── monitoring/             # Monitoring and alerting setup
+│   ├── backups/                # Backup and disaster recovery procedures
+│   ├── automation/             # Infrastructure as Code and CI/CD
+│   └── troubleshooting/        # Common issues and diagnostic procedures
+└── .cursorrules                # This file - project context for Cursor
+```
+
+## Documentation Goals
+- **Architecture First**: Document the reasoning behind design decisions
+- **Comprehensive Coverage**: Include all aspects from hardware to applications
+- **Operational Focus**: Provide practical guidance for maintenance and troubleshooting
+- **Security Emphasis**: Document security implementations and best practices
+- **Knowledge Sharing**: Make documentation useful for others building similar setups
+
+## Content Guidelines
+- Include both "what" and "why" for all configurations
+- Provide step-by-step procedures for complex tasks
+- Document lessons learned and things to avoid
+- Include diagrams and visual representations where helpful
+- Maintain up-to-date configuration examples
+- Document troubleshooting steps for common issues
+
+## Documentation Standards
+- Use clear, descriptive headings and consistent formatting
+- Include code blocks with syntax highlighting for configurations
+- Add comments explaining non-obvious implementation decisions
+- Provide links between related documentation sections
+- Include version information and last updated dates
+- Use bullet points and numbered lists for better readability
+
+## When Working on This Repository
+- **Adding New Services**: Create documentation in `docs/services/[service-name]/` with README.md, configuration.md, deployment.md, and troubleshooting.md
+- **Architecture Changes**: Update both the main README.md and relevant docs/architecture/ files
+- **Configuration Updates**: Always document the reasoning behind changes
+- **Troubleshooting**: Add new issues and solutions to appropriate troubleshooting sections
+- **Security Changes**: Document any security modifications in docs/security/
+
+## File Naming Conventions
+- Use lowercase with hyphens for directories: `my-service-name/`
+- Use descriptive names: `service-configuration.md` not `config.md`
+- Include service/component names in filenames for clarity
+- Use .md extension for all documentation files
+
+## Common Tasks
+- **New Service Documentation**: Create service directory with standard template files
+- **Architecture Updates**: Update diagrams and explanations when infrastructure changes
+- **Configuration Management**: Keep configuration examples current and tested
+- **Troubleshooting Updates**: Add new solutions as issues are encountered and resolved
+- **Security Reviews**: Regular updates to security documentation and procedures
+
+## Context for AI Assistance
+This is a technical documentation project for a homelab environment. When providing assistance:
+- Focus on clarity and completeness in documentation
+- Suggest best practices for homelab management
+- Recommend security considerations for home environments
+- Provide practical, tested solutions
+- Consider both beginner and advanced perspectives
+- Emphasize maintainability and documentation sustainability
