@@ -1,3 +1,8 @@
+---
+description: "Homelab documentation project context and guidelines"
+alwaysApply: true
+---
+
 # Homelab Documentation Repository
 
 ## Project Purpose
@@ -18,7 +23,7 @@ This repository contains comprehensive documentation for a personal homelab setu
 │   ├── backups/                # Backup and disaster recovery procedures
 │   ├── automation/             # Infrastructure as Code and CI/CD
 │   └── troubleshooting/        # Common issues and diagnostic procedures
-└── .cursorrules                # This file - project context for Cursor
+└── .cursor/rules/              # Cursor rules for project workflow
 ```
 
 ## Documentation Goals
